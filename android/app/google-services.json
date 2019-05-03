@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1056988441464",
+    "firebase_url": "https://luyenthithpt-cfe34.firebaseio.com",
+    "project_id": "luyenthithpt-cfe34",
+    "storage_bucket": "luyenthithpt-cfe34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056988441464:android:d32b3466776d9645",
+        "android_client_info": {
+          "package_name": "com.vers.luyenthithpt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1056988441464-98sa7e2vb41687h5m021rgdocd4mg2mq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRNZdqwynzSXDj7Dan-jj9KGCEGTI5JGM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056988441464-98sa7e2vb41687h5m021rgdocd4mg2mq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1056988441464-9rd6e91c2cprpdecuq9v96u60aj637nk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.vers.luyenthithpt"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

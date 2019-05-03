@@ -1,0 +1,4 @@
+storePassword=khongco1
+keyPassword=khongco1
+keyAlias=key
+storeFile=/Users/coduy/key.jks
