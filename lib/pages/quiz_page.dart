@@ -1,9 +1,7 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:luyenthithpt/logic/getData.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:luyenthithpt/pages/result_page.dart';
-import 'package:firebase_admob/firebase_admob.dart';
 
 class Result {
   String yourAnswer;
@@ -24,40 +22,9 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   Question question;
   List<Result> groupValue = [];
-  var appId;
-  var appUnit;
-  var buildInterstitial;
 
   @override
   void initState() {
-    super.initState();
-    if (Platform.isAndroid) {
-      appId = 'ca-app-pub-2718889817697354~8991141115';
-      appUnit = 'ca-app-pub-2718889817697354/3945508627';
-    } else {
-      appId = 'ca-app-pub-2718889817697354~4408543054';
-      appUnit = 'ca-app-pub-2718889817697354/7055242910';
-    }
-    FirebaseAdMob.instance.initialize(appId: appId);
-
-    MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
-      keywords: <String>['quiz', 'education', 'learn', 'learning', 'hoc', 'hoc online', 'thi thpt'],
-      //testDevices: <String>[], // Android emulators are considered test devices
-    );
-
-    InterstitialAd myInterstitial = InterstitialAd(
-      // Replace the testAdUnitId with an ad unit id from the AdMob dash.
-      // https://developers.google.com/admob/android/test-ads
-      // https://developers.google.com/admob/ios/test-ads
-      //adUnitId: InterstitialAd.testAdUnitId,
-      adUnitId: appUnit,
-      targetingInfo: targetingInfo,
-      listener: (MobileAdEvent event) {
-        print("InterstitialAd event is $event");
-      },
-    );
-
-    buildInterstitial = myInterstitial..load();
 
     for (int i = 0; i < widget.item.number; i++) {
       groupValue.add(Result('', '', ''));
@@ -66,14 +33,15 @@ class _QuizPageState extends State<QuizPage> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
-    buildInterstitial.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    
     return MaterialApp(
+            debugShowCheckedModeBanner: false,
+
       home: Scaffold(
         appBar: AppBar(
             title: Text(
@@ -248,12 +216,6 @@ class _QuizPageState extends State<QuizPage> {
                     elevation: 0,
                     color: Color(0xffE6E9F2),
                     onPressed: () {
-                      buildInterstitial
-                        ..show(
-                          anchorType: AnchorType.bottom,
-                          anchorOffset: 0.0,
-                        );
-
                       Navigator.push(
                           context,
                           MaterialPageRoute(
